@@ -71,16 +71,22 @@ const businesses = [
   rating: 5,
   reviewCount: 11190
 },
-]
+];
 
-function App() {
-  return (
-    <div className="App">
-      <h1>ravenous</h1>
-      <SearchBar />
-      <BusinessList business={businesses}/>
-    </div>
-  )
+function searchYelp(term, location, sortBy) {
+  console.log(`Searching Yelp for ${term}, ${location}, and ${sortBy} `);
+}
+
+class App extends React.Component {
+
+   render () {
+     return (
+      <div className="App">
+        <h1>ravenous</h1>
+        <SearchBar searchYelp={searchYelp}/>
+        <BusinessList business={businesses}/>
+      </div>
+  )};
   }
 
 export default App;
